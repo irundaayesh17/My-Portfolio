@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, useEffect } from 'react';
 
 const Contactus = () => {
     const [isActive, setIsActive] = useState(false);
@@ -15,11 +15,11 @@ const Contactus = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    const onSubmit = async (event) => {
         event.preventDefault();
         setIsSubmitting(true);
         
-        const formData = new FormData(event.currentTarget);
+        const formData = new FormData(event.target);
         formData.append("access_key", "ef62ad24-34df-4140-8ab6-a0253d4b5a3d");
     
         try {
@@ -34,7 +34,7 @@ const Contactus = () => {
     
             if (res.success) {
                 // Clear form inputs
-                event.currentTarget.reset();
+                event.target.reset();
                 setIsSubmitted(true);
                 // Hide success message after 5 seconds
                 setTimeout(() => setIsSubmitted(false), 5000);
@@ -144,7 +144,7 @@ const Contactus = () => {
             </div>
             
             {/* Add this to your global CSS or Tailwind config */}
-            <style>{`
+            <style jsx>{`
                 @keyframes fade-in {
                     from { opacity: 0; transform: translateY(-10px); }
                     to { opacity: 1; transform: translateY(0); }
