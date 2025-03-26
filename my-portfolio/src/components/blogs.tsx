@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import BlogCard from './BlogCard';
+import { useState, useEffect } from 'react';
+import BlogCard from './blogCard';
 import b1 from '../assets/b1.jpg';
 import b2 from '../assets/b2.jpg';
 import b3 from '../assets/b3.jpg';

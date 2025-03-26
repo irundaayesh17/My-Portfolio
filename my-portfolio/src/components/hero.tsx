@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from 'react';
 import hero from "../assets/hero.png";
 import linkedin from "../assets/linkedin.png";

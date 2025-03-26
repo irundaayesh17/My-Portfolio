@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import ProjectCard from './ProjectCard';
+import { useState, useEffect, useRef } from 'react';
+import ProjectCard from './projectCard';
 import fitnessapp from '../assets/2.png';
 import lankabids from '../assets/2.jpg';
 import FOODORDER from '../assets/3.jpg';

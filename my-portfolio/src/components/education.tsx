@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import EducationCard from './educationCard';
 import nibmlogo from '../assets/nibm.jpg';
 import esoftlogo from '../assets/esoft.png';
