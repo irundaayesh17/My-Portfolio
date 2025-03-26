@@ -15,11 +15,11 @@ const Contactus = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const onSubmit = async (event) => {
+    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setIsSubmitting(true);
-        
-        const formData = new FormData(event.target);
+    
+        const formData = new FormData(event.currentTarget); // Use currentTarget instead of target
         formData.append("access_key", "ef62ad24-34df-4140-8ab6-a0253d4b5a3d");
     
         try {
@@ -34,7 +34,7 @@ const Contactus = () => {
     
             if (res.success) {
                 // Clear form inputs
-                event.target.reset();
+                event.currentTarget.reset();
                 setIsSubmitted(true);
                 // Hide success message after 5 seconds
                 setTimeout(() => setIsSubmitted(false), 5000);
@@ -45,6 +45,7 @@ const Contactus = () => {
             setIsSubmitting(false);
         }
     };
+    
 
     const handleEmailClick = () => {
         window.location.href = "mailto:ayeshirunda1234@gmail.com?subject=Contact%20Request";
@@ -144,15 +145,7 @@ const Contactus = () => {
             </div>
             
             {/* Add this to your global CSS or Tailwind config */}
-            <style jsx>{`
-                @keyframes fade-in {
-                    from { opacity: 0; transform: translateY(-10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                .animate-fade-in {
-                    animation: fade-in 0.3s ease-out forwards;
-                }
-            `}</style>
+
         </section>
     );
 };
