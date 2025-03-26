@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { 
   SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, 
   SiTailwindcss, SiMongodb, SiPython, SiTypescript, 
-  SiFlutter, SiAndroid, SiMysql, SiGit, SiGithub 
+  SiAndroid, SiMysql, SiGit, SiGithub 
 } from 'react-icons/si';
-import { FaJava } from 'react-icons/fa';
 import csharp from '../assets/csharp.svg';
 import java from '../assets/java.svg';
 import flutter from '../assets/flutter.svg';
@@ -97,7 +96,12 @@ const Skills = () => {
 };
 
 // Wrapper component for icons with hover effect and label
-const IconWrapper = ({ children, label }) => (
+interface IconWrapperProps {
+  children: ReactNode;
+  label: string;
+}
+
+const IconWrapper = ({ children, label }: IconWrapperProps) => (
   <div className="relative group">
     <div className="p-2 rounded-full bg-zinc-50/10 shadow-md hover:scale-115 transition-transform duration-200 ease-in-out">
       {children}

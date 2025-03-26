@@ -2,7 +2,16 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react'; // You can also use "→" as text if you prefer
 
-const EducationCard = ({ logo, university, course, year, link }) => {
+interface EducationCardProps {
+  logo: string;
+  university: string;
+  course: string;
+  year: string;
+  link: string;
+}
+
+
+const EducationCard = ({ logo, university, course, year, link } : EducationCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

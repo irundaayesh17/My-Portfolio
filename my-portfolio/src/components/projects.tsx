@@ -9,7 +9,7 @@ import byft from '../assets/byft.png';
 
 const Projects = () => {
   const [isActive, setIsActive] = useState(false);
-  const projectCardsRef = useRef([]);
+  const projectCardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   // Scroll handler for underline animation
   useEffect(() => {
@@ -38,18 +38,14 @@ const Projects = () => {
       }
     );
 
-    if (projectCardsRef.current) {
-      projectCardsRef.current.forEach((card) => {
-        if (card) observer.observe(card);
-      });
-    }
+    projectCardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
 
     return () => {
-      if (projectCardsRef.current) {
-        projectCardsRef.current.forEach((card) => {
-          if (card) observer.unobserve(card);
-        });
-      }
+      projectCardsRef.current.forEach((card) => {
+        if (card) observer.unobserve(card);
+      });
     };
   }, []);
 
@@ -71,7 +67,9 @@ const Projects = () => {
           {/* Grid Layout for 2 cards per row */}
           <div className='grid md:grid-cols-2 grid-cols-1 gap-4 mt-6'>
             <div 
-              ref={el => projectCardsRef.current[0] = el}
+              ref={(el: HTMLDivElement | null) => {
+                if (el) projectCardsRef.current[0] = el;
+              }}
               className="opacity-0 transition-all duration-500 ease-out"
             >
               <ProjectCard
@@ -85,7 +83,9 @@ const Projects = () => {
               />
             </div>
             <div 
-              ref={el => projectCardsRef.current[1] = el}
+              ref={(el: HTMLDivElement | null) => {
+                if (el) projectCardsRef.current[1] = el;
+              }}
               className="opacity-0 transition-all duration-500 ease-out delay-100"
             >
               <ProjectCard
@@ -99,7 +99,9 @@ const Projects = () => {
               />
             </div>
             <div 
-              ref={el => projectCardsRef.current[2] = el}
+              ref={(el: HTMLDivElement | null) => {
+                if (el) projectCardsRef.current[2] = el;
+              }}
               className="opacity-0 transition-all duration-500 ease-out delay-200"
             >
               <ProjectCard
@@ -113,7 +115,9 @@ const Projects = () => {
               />
             </div>
             <div 
-              ref={el => projectCardsRef.current[3] = el}
+              ref={(el: HTMLDivElement | null) => {
+                if (el) projectCardsRef.current[3] = el;
+              }}
               className="opacity-0 transition-all duration-500 ease-out delay-300"
             >
               <ProjectCard
@@ -127,7 +131,9 @@ const Projects = () => {
               />
             </div>
             <div 
-              ref={el => projectCardsRef.current[4] = el}
+              ref={(el: HTMLDivElement | null) => {
+                if (el) projectCardsRef.current[4] = el;
+              }}
               className="opacity-0 transition-all duration-500 ease-out delay-400"
             >
               <ProjectCard
@@ -141,7 +147,9 @@ const Projects = () => {
               />
             </div>
             <div 
-              ref={el => projectCardsRef.current[5] = el}
+              ref={(el: HTMLDivElement | null) => {
+                if (el) projectCardsRef.current[5] = el;
+              }}
               className="opacity-0 transition-all duration-500 ease-out delay-500"
             >
               <ProjectCard
@@ -159,7 +167,7 @@ const Projects = () => {
       </div>
 
       {/* Add this to your global CSS or CSS-in-JS solution */}
-      <style jsx>{`
+      <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;

@@ -1,9 +1,12 @@
-import { useRef, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import { useRef, useEffect, useState, MouseEvent } from 'react';
 
-const Navbar = ({ navOpen }) => {
-    const navLinks = useRef([]);
-    const activeBox = useRef(null);
+interface NavbarProps {
+  navOpen: boolean;
+}
+
+const Navbar = ({ navOpen }: NavbarProps) => {
+    const navLinks = useRef<(HTMLAnchorElement | null)[]>([]);
+    const activeBox = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
@@ -23,7 +26,7 @@ const Navbar = ({ navOpen }) => {
         return () => window.removeEventListener('resize', initActiveBox);
     }, [activeIndex]);
 
-    const updateActiveBox = (element) => {
+    const updateActiveBox = (element: HTMLAnchorElement | null) => {
         if (activeBox.current && element) {
             const { offsetLeft, offsetTop, offsetWidth, offsetHeight } = element;
             activeBox.current.style.left = `${offsetLeft}px`;
@@ -33,7 +36,7 @@ const Navbar = ({ navOpen }) => {
         }
     };
 
-    const handleNavClick = (e, id, index) => {
+    const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, id: string, index: number) => {
         e.preventDefault();
         setActiveIndex(index);
         
@@ -61,7 +64,11 @@ const Navbar = ({ navOpen }) => {
                 <a
                     href={`#${id}`}
                     key={index}
-                    ref={(el) => (navLinks.current[index] = el)}
+                    ref={(el) => {
+                        if (el) {
+                            navLinks.current[index] = el;
+                        }
+                    }}
                     className={`nav-link ${index === activeIndex ? 'active' : ''}`}
                     onClick={(e) => handleNavClick(e, id, index)}
                 >
@@ -71,10 +78,6 @@ const Navbar = ({ navOpen }) => {
             <div className="active-box" ref={activeBox}></div>
         </nav>
     );
-};
-
-Navbar.propTypes = {
-    navOpen: PropTypes.bool.isRequired
 };
 
 export default Navbar;
