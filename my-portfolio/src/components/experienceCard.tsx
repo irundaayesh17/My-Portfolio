@@ -6,12 +6,13 @@ interface EducationCardProps {
   logo: string;
   company: string;
   position: string;
+  Site: string;
   duration: string;
   link: string;
 }
 
 
-const EducationCard = ({ logo, company, position, duration, link } : EducationCardProps) => {
+const EducationCard = ({ logo, company, position, Site, duration, link } : EducationCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -48,6 +49,8 @@ const EducationCard = ({ logo, company, position, duration, link } : EducationCa
             </h3>
             {/* Course name */}
             <p className="text-gray-300 md:text-[13px] text-[12px]">{position}</p>
+
+            <p className="text-gray-400 md:text-[14px] text-[12px]">{Site}</p>
           </div>
         </div>
         {/* Right section with years */}

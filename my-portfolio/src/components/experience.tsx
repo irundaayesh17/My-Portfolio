@@ -31,8 +31,9 @@ const Experience = () => {
             <div className="mt-6 space-y-4">
             <ExperienceCard
               logo={bl360}
-              company="Blue Lotus 360 (PVT) Ltd"
-              position="UI/UX Engineer Intern"
+              company="UI/UX Engineer Intern"
+              position="Blue Lotus 360 (Pvt) Ltd • Full Time"
+              Site="Colombo, Sri Lanka • Onsite"
               duration="2025 Apr - Present"
               link={'https://bluelotus360.com/lk/'}
             />

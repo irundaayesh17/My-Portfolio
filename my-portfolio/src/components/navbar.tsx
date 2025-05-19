@@ -53,6 +53,7 @@ const Navbar = ({ navOpen }: NavbarProps) => {
     const navItems = [
         { label: 'Home', id: 'home' },
         { label: 'Education', id: 'education' },
+        { label: 'Experience', id: 'experience' },
         { label: 'Skills', id: 'skills' },
         { label: 'Projects', id: 'projects' },
         { label: 'Blogs', id: 'blogs' },
