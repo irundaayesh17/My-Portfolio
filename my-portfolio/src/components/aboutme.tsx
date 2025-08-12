@@ -31,26 +31,26 @@ const Aboutme = () => {
 
           {/* First Paragraph */}
           <motion.p
-            className='text-left font-primary text-[16px] leading-8'
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
-            👋 Hello, I'm Ayesh, a second-year Computer Science student at NIBM. I'm deeply passionate about Full Stack Development and dedicated to expanding my skills in this dynamic field. My journey involves continuous learning, staying abreast of the latest web development trends, and exploring the intricacies of the entire development stack.
-          </motion.p>
+  className='text-left font-primary text-[16px] leading-8'
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.6, ease: 'easeOut' }}
+>
+  👋 Hello, I'm Ayesh, a second-year Computer Science student at NIBM with a strong passion for crafting engaging digital experiences. As a UI/UX engineer and web developer, I focus on designing intuitive interfaces and building seamless, responsive web applications that blend aesthetics with functionality.
+</motion.p>
 
-          {/* Second Paragraph */}
-          <motion.p
-            className='text-left font-primary text-[16px] leading-8 mt-4'
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-          >
-            💻 As a computer science enthusiast, I thrive on challenges and creativity in the coding world. Beyond my academic pursuits, I'm eager to connect with like-minded professionals and explore the vast opportunities that the tech industry offers.
-            Let's connect and share our experiences in the ever-evolving landscape of Full Stack Development!👨‍💻
-          </motion.p>
+{/* Second Paragraph */}
+<motion.p
+  className='text-left font-primary text-[16px] leading-8 mt-4'
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+>
+  💡 My approach combines creativity with problem-solving—transforming ideas into user-friendly designs and efficient code. I’m always exploring the latest design trends, prototyping tools, and development technologies to deliver innovative solutions. Let’s collaborate and create experiences that users love! 🎨💻
+</motion.p>
+
 
         </div>
       </div>

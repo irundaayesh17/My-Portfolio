@@ -1,8 +1,10 @@
 import { useState, useEffect, ReactNode } from 'react';
 import { 
   SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, 
-  SiTailwindcss, SiMongodb, SiPython, SiTypescript, 
-  SiAndroid, SiMysql, SiGit, SiGithub 
+  SiTailwindcss, SiTypescript, 
+  SiAndroid, SiMysql, SiGit, SiGithub, 
+  SiFigma,
+  SiSass
 } from 'react-icons/si';
 import csharp from '../assets/csharp.svg';
 import java from '../assets/java.svg';
@@ -58,11 +60,11 @@ const Skills = () => {
             <IconWrapper label="Tailwind CSS">
               <SiTailwindcss size={50} color="#38B2AC" />
             </IconWrapper>
-            <IconWrapper label="MongoDB">
-              <SiMongodb size={50} color="#47A248" />
+            <IconWrapper label="Figma">
+              <SiFigma size={50} color="#F24E1E" />
             </IconWrapper>
-            <IconWrapper label="Python">
-              <SiPython size={50} color="#3776AB" />
+            <IconWrapper label="Sass">
+              <SiSass size={50} color="#CC6699" />
             </IconWrapper>
             <IconWrapper label="TypeScript">
               <SiTypescript size={50} color="#3178C6" />

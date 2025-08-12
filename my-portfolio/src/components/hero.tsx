@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import hero from "../assets/hero.png";
 import linkedin from "../assets/linkedin.png";
-import CV from "../assets/Ayesh Perera.pdf";
-
+import CV from "../assets/AyeshPerera.pdf";
 const Hero = () => {
     const [isActive, setIsActive] = useState(false);
     useEffect(() => {
@@ -31,12 +30,12 @@ const Hero = () => {
             </div>
             <div className='pl-12 pr-8 text-left md:text-center mt-4 gap-4 grid md:max-w-[740px]'>
             <span className="text-4xl rowdies-bold text-zinc-50 font-primary">
-                Hi, I'm Ayesh Perera, a 
-                <span className={`md:relative md:inline-block underline-curve ${isActive ? 'underline-curve-active' : ''}`}> Software Engineer </span>
+                Hi, I'm Ayesh Perera, an 
+                <span className={`md:relative md:inline-block underline-curve ${isActive ? 'underline-curve-active' : ''}`}>UI/UX Engineer </span>
                 <span className='rowdies-regular'> & </span>
                 <span className={`md:relative inline-block max-md:mt-2 underline-curve ${isActive ? 'underline-curve-active' : ''}`}> Web Developer.</span>
             </span>
-            <p className='md:text-4xl text-3xl text-zinc-50 font-primary'>I love to build <span className='rowdies-bold '>Modern</span> & <span className='rowdies-bold '> Scalable</span> Websites.</p>
+            <p className='md:text-4xl text-3xl text-zinc-50 font-primary'>I love to design & build <span className='rowdies-bold '>Modern</span> & <span className='rowdies-bold '> Scalable</span> Websites.</p>
             </div>
             <div className='grid gap-5 md:grid-cols-2 mt-8 md:mx-32'>
                 <button 
